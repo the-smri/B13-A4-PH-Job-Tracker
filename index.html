@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+
+
+    <!-- Inter Font GF Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind is here,my dear. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>    
+.inter-font{
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+    </style>
+</head>
+<body class="inter-font">
+    <section id="job-header" class="w-[11/12] max-w-[1110px] mx-auto mt-12">
+    <h1 class="text-[#002C5C] font-bold mb-5">Job Application Tracker</h1>
+    <div id="card-container" class="flex justify-between">
+        <div id="total-card" class="bg-[#F1F2F4] rounded-xl w-[360px] h-[98px] p-3">
+            <p id="total-text" class="text-[#323B49]">Total</p>
+            <h4 id="total-count" class="text-[#002C5C] font-bold">8</h4>
+        </div>
+        <div id="interview-card" class="bg-[#F1F2F4] rounded-xl w-[360px] h-[98px] p-3">
+            <p id="interview-text" class="text-[#323B49]">Interview</p>
+            <h4 id="interview-count" class="font-bold text-[#10B981]">0</h4>
+        </div>
+        <div id="rejected-card" class="bg-[#F1F2F4] rounded-xl w-[360px] h-[98px] p-3">
+            <p id="rejected-text" class="text-[#323B49]">Rejected</p>
+            <h4 id="rejected-count" class="font-bold text-[#EF4444]">0</h4>
+        </div>
+    </div>
+    <br>
+    <hr class="opacity-20">
+    </section>
+</body>
+</html>
