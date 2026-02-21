@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header Section -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-[#002C5C]">Available Jobs</h1>
+            <div class="flex gap-4">
+                <span class="text-gray-600">8 jobs</span>
+                <span class="text-blue-600 cursor-pointer hover:underline">Interview</span>
+                <span class="text-red-600 cursor-pointer hover:underline">Rejected</span>
+            </div>
+        </div>
+
+        <!-- Jobs Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Job Card 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">MobileFirstCorp</h2>
+                        <p class="text-lg text-gray-700 mt-1">React Native Developer</p>
+                    </div>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">NOT APPLIED</span>
+                </div>
+                
+                <div class="text-sm text-gray-600 mb-3">
+                    Remote · Full-time · $130,000-$175,000
+                </div>
+                
+                <p class="text-gray-600 mb-4">
+                    Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                </p>
+                
+                <div class="flex gap-3">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium">
+                        INTERVIEW
+                    </button>
+                    <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm font-medium">
+                        REJECTED
+                    </button>
+                </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">WebFlowAgency</h2>
+                        <p class="text-lg text-gray-700 mt-1">Web Designer & Developer</p>
+                    </div>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">NOT APPLIED</span>
+                </div>
+                
+                <div class="text-sm text-gray-600 mb-3">
+                    Los Angeles, CA · Part-time · $80,000-$120,000
+                </div>
+                
+                <p class="text-gray-600 mb-4">
+                    Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.
+                </p>
+                
+                <div class="flex gap-3">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium">
+                        INTERVIEW
+                    </button>
+                    <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm font-medium">
+                        REJECTED
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional: Add more job cards following the same pattern -->
+        <div class="mt-4 text-center text-gray-500 text-sm">
+            Showing 2 of 8 jobs
+        </div>
+    </div>
+</body>
+</html>
