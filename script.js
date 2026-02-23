@@ -8,7 +8,7 @@ let rejectedCount = document.getElementById('rejected-count');
 const allFilter = document.getElementById('filter-all');
 const filterInterview = document.getElementById('filter-interview');
 const filterRejected = document.getElementById('filter-rejected');
-
+const jobsCards = document.getElementById('jobCards');
 const allJobCards = document.getElementById('jobCards');
 
 function calculateCount(){
@@ -34,13 +34,74 @@ function toggleStyle(id){
     const selected = document.getElementById(id);
     selected.classList.add('bg-blue-500', 'text-white');
 
+    if(id == 'filter-interview'){
+        jobsCards.classList.add('hidden');
+        filterSection.classList.remove('hidden');
+    }
+    else if (id == 'filter-all'){
+        jobsCards.classList.remove('hidden');
+        filterSection.classList.add('hidden');
+    }
+
 };
 
 const mainContainer = document.querySelector('main');
-mainContainer.addEventListener('click', function(event){
+const filterSection = document.getElementById('filtered-section');
 
+mainContainer.addEventListener('click', function(event){
+    if(event.target.classList.contains('interview-btn')){
+        const parentNode = event.target.parentNode.parentNode;
+    const jobTitle = parentNode.querySelector('.jobTitle').innerText;
+    const jobRole = parentNode.querySelector('.jobRole').innerText;
+    const jobSalary = parentNode.querySelector('.jobSalary').innerText;
+    const statusBtn = parentNode.querySelector('.status-btn').innerText;
+    const jobInfo = parentNode.querySelector('.jobInfo').innerText;
+
+    const cardInfo = {
+        jobTitle,
+        jobRole,
+        jobSalary,
+        statusBtn, 
+        jobInfo
+    }
+
+    const jobExist = interviewList.find(item=> item.jobTitle == cardInfo.jobTitle);
+    
+    parentNode.querySelector('.status-btn').innerText = 'INTERVIEW';
+
+    if(!jobExist){
+        interviewList.push(cardInfo);
+    }
+    renderInterview();
+    }
 });
 
+function renderInterview(){
+    filterSection.innerHTML = '';
 
+    for(interview of interviewList){
+        console.log(interview);
+
+        let div = document.createElement('div');
+        div.className = 'px-5 py-6 bg-[#F1F2F4] rounded-md w-11/12 max-w-[1110px] mx-auto mt-6 md:mt-12 space-y-6';
+        div.innerHTML = `
+        <div class="flex justify-between">
+            <div>
+                <h3 class="jobTitle text-lg font-semibold">${interview.jobTitle}</h3>
+                <p class="jobRole text-[#64748B]">Junior Instructor</p>
+                <p class="jobSalary text-[#64748B] mt-3">Remote • Full-time • 20,000 - 50,000</p>
+                <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
+                <p class="jobInfo mt-4">Manage Web Development Basic Course, is designed to build a strong foundation in modern web development for beginners who want to start their journey as a web developer.</p>
+                <div class="flex flex-col sm:flex-row gap-3 mt-5">
+                    <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
+                    <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
+                </div>
+            </div>
+            <div><i class="delete-btn fa-regular fa-trash-can"></i></div>
+        </div>
+        `
+    filterSection.appendChild(div);
+    }
+};
 
 

@@ -28,7 +28,7 @@
 
     <main>
 
-        <section id="job-header" class="w-11/12 max-w-[1110px] mx-auto mt-6 md:mt-12">
+    <section id="job-header" class="w-11/12 max-w-[1110px] mx-auto mt-6 md:mt-12">
 
         <h1 class="text-[#002C5C] text-2xl md:text-3xl font-bold mb-6">
             Job Application Tracker
@@ -58,12 +58,10 @@
     </section>
 
     <section class="w-11/12 max-w-[1110px] mx-auto mb-12">
-
         <div class="flex flex-col md:flex-row md:justify-between gap-2">
             <h3 class="text-[#002C5C] text-xl font-bold">Available Jobs</h3>
             <p id="available-count" class="text-gray-600">8 Jobs</p>
         </div>
-
         <div class="flex flex-wrap gap-3 mt-6">
             <button onclick="toggleStyle('filter-all')" class="bg-blue-500 py-2 px-6 rounded text-white" id="filter-all">
                 All
@@ -76,18 +74,22 @@
             </button>
         </div>
     </section>
+    
+    <!-- Filtered Cards -->
+     <section id="filtered-section" class="hidden">
+
+     </section>
 
     <section id="jobCards" class="w-11/12 max-w-[1110px] mx-auto mt-6 md:mt-12 space-y-6">
-
     <!-- Card 1 -->
       <div data-id="job1" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">Programming Hero</h3>
-                <p class="text-[#64748B]">Junior Instructor</p>
-                <p class="text-[#64748B] mt-3">Remote • Full-time • 20,000 - 50,000</p>
+                <h3 class="jobTitle text-lg font-semibold">Programming Hero</h3>
+                <p class="jobRole text-[#64748B]">Junior Instructor</p>
+                <p class="jobSalary text-[#64748B] mt-3">Remote • Full-time • 20,000 - 50,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Manage Web Development Basic Course, is designed to build a strong foundation in modern web development for beginners who want to start their journey as a web developer.</p>
+                <p class="jobInfo mt-4">Manage Web Development Basic Course, is designed to build a strong foundation in modern web development for beginners who want to start their journey as a web developer.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -101,11 +103,11 @@
     <div data-id="job2" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">TechNova Solutions</h3>
-                <p class="text-[#64748B]">Frontend Developer</p>
-                <p class="text-[#64748B] mt-3">Onsite • Full-time • $90,000 - $120,000</p>
+                <h3 class="jobTitle text-lg font-semibold">TechNova Solutions</h3>
+                <p class="jobRole text-[#64748B]">Frontend Developer</p>
+                <p class="jobSalary text-[#64748B] mt-3">Onsite • Full-time • $90,000 - $120,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Develop modern web interfaces using React and Tailwind CSS.</p>
+                <p class="jobInfo mt-4">Develop modern web interfaces using React and Tailwind CSS.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -119,11 +121,11 @@
     <div data-id="job3" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">CloudSync Ltd</h3>
-                <p class="text-[#64748B]">Backend Developer</p>
-                <p class="text-[#64748B] mt-3">Remote • Contract • $110,000 - $150,000</p>
+                <h3 class="jobTitle text-lg font-semibold">CloudSync Ltd</h3>
+                <p class="jobRole text-[#64748B]">Backend Developer</p>
+                <p class="jobSalary text-[#64748B] mt-3">Remote • Contract • $110,000 - $150,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Design scalable APIs and microservices architecture.</p>
+                <p class="jobInfo mt-4">Design scalable APIs and microservices architecture.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -137,11 +139,11 @@
     <div data-id="job4" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">DataWave Inc</h3>
-                <p class="text-[#64748B]">Data Analyst</p>
-                <p class="text-[#64748B] mt-3">Hybrid • Full-time • $85,000 - $105,000</p>
+                <h3 class="jobTitle text-lg font-semibold">DataWave Inc</h3>
+                <p class="jobRole text-[#64748B]">Data Analyst</p>
+                <p class="jobSalary text-[#64748B] mt-3">Hybrid • Full-time • $85,000 - $105,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Analyze business data and create insightful dashboards.</p>
+                <p class="jobInfo mt-4">Analyze business data and create insightful dashboards.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -155,11 +157,11 @@
     <div data-id="job5" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">NextGen AI</h3>
-                <p class="text-[#64748B]">Machine Learning Engineer</p>
-                <p class="text-[#64748B] mt-3">Remote • Full-time • $140,000 - $180,000</p>
+                <h3 class="jobTitle text-lg font-semibold">NextGen AI</h3>
+                <p class="jobRole text-[#64748B]">Machine Learning Engineer</p>
+                <p class="jobSalary text-[#64748B] mt-3">Remote • Full-time • $140,000 - $180,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Develop and deploy ML models for predictive systems.</p>
+                <p class="jobInfo mt-4">Develop and deploy ML models for predictive systems.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -173,11 +175,11 @@
     <div data-id="job6" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">CyberSecure Ltd</h3>
-                <p class="text-[#64748B]">Cybersecurity Specialist</p>
-                <p class="text-[#64748B] mt-3">Onsite • Full-time • $100,000 - $130,000</p>
+                <h3 class="jobTitle text-lg font-semibold">CyberSecure Ltd</h3>
+                <p class="jobRole text-[#64748B]">Cybersecurity Specialist</p>
+                <p class="jobSalary text-[#64748B] mt-3">Onsite • Full-time • $100,000 - $130,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Protect systems and networks from cyber threats.</p>
+                <p class="jobInfo mt-4">Protect systems and networks from cyber threats.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -191,11 +193,11 @@
     <div data-id="job7" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">AppWorks Studio</h3>
-                <p class="text-[#64748B]">UI/UX Designer</p>
-                <p class="text-[#64748B] mt-3">Hybrid • Contract • $75,000 - $95,000</p>
+                <h3 class="jobTitle text-lg font-semibold">AppWorks Studio</h3>
+                <p class="jobRole text-[#64748B]">UI/UX Designer</p>
+                <p class="jobSalary text-[#64748B] mt-3">Hybrid • Contract • $75,000 - $95,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Design intuitive user interfaces and experiences.</p>
+                <p class="jobInfo mt-4">Design intuitive user interfaces and experiences.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -209,11 +211,11 @@
     <div data-id="job8" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">DevOps Hub</h3>
-                <p class="text-[#64748B]">DevOps Engineer</p>
-                <p class="text-[#64748B] mt-3">Remote • Full-time • $120,000 - $150,000</p>
+                <h3 class="jobTitle text-lg font-semibold">DevOps Hub</h3>
+                <p class="jobRole text-[#64748B]">DevOps Engineer</p>
+                <p class="jobSalary text-[#64748B] mt-3">Remote • Full-time • $120,000 - $150,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Manage CI/CD pipelines and cloud infrastructure.</p>
+                <p class="jobInfo mt-4">Manage CI/CD pipelines and cloud infrastructure.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
@@ -227,11 +229,11 @@
       <div data-id="job9" data-status="not-applied" class="px-5 py-6 bg-[#F1F2F4] rounded-md">
         <div class="flex justify-between">
             <div>
-                <h3 class="text-lg font-semibold">Mobile First Corp</h3>
-                <p class="text-[#64748B]">React Native Developer</p>
-                <p class="text-[#64748B] mt-3">Remote • Full-time • $130,000 - $175,000</p>
+                <h3 class="jobTitle text-lg font-semibold">Mobile First Corp</h3>
+                <p class="jobRole text-[#64748B]">React Native Developer</p>
+                <p class="jobSalary text-[#64748B] mt-3">Remote • Full-time • $130,000 - $175,000</p>
                 <button class="status-btn bg-[#EEF4FF] py-2 px-6 rounded text-[#002C5C] mt-3">NOT APPLIED</button>
-                <p class="mt-4">Build cross-platform mobile applications using React Native.</p>
+                <p class="jobInfo mt-4">Build cross-platform mobile applications using React Native.</p>
                 <div class="flex flex-col sm:flex-row gap-3 mt-5">
                     <button class="interview-btn px-4 py-2 border-2 border-green-400 text-green-400 rounded-md">INTERVIEW</button>
                     <button class="rejected-btn px-4 py-2 border-2 border-red-500 text-red-500 rounded-md">REJECTED</button>
