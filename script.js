@@ -1,6 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
- let currentStatus = 'all';
+ let currentStatus = 'all'; 
 
  let totalCount = document.getElementById('total-count');
  let interviewcount = document.getElementById('interview-count');
@@ -115,6 +115,39 @@ if(!jobExist){
     if (currentStatus == 'filter-interview'){
         renderInterview();
     }
+        calculateCount();
+    }
+    else if(event.target.classList.contains('delete-btn')){
+        const cardContainer = event.target.closest('#jobCards > div, #filtered-section > div');
+        if(!cardContainer){
+            return;
+        }
+
+        const titleNode = cardContainer.querySelector('.jobTitle');
+        if(!titleNode){
+            return;
+        }
+
+        const jobTitle = titleNode.innerText;
+        const mainCard = Array.from(allJobCards.children).find((card) => {
+            const cardTitle = card.querySelector('.jobTitle');
+            return cardTitle && cardTitle.innerText === jobTitle;
+        });
+
+        if(mainCard){
+            mainCard.remove();
+        }
+
+        interviewList = interviewList.filter((item) => item.jobTitle !== jobTitle);
+        rejectedList = rejectedList.filter((item) => item.jobTitle !== jobTitle);
+
+        if(currentStatus === 'filter-interview'){
+            renderInterview();
+        }
+        else if(currentStatus === 'filter-rejected'){
+            renderRejected();
+        }
+
         calculateCount();
     }
 });
